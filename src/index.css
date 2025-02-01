@@ -1,0 +1,101 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgb(0, 0, 0);
+  background-color: #000000;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+
+.searchbox button{
+  margin-top: 2rem;
+}
+
+@property --angle{
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.ani-btn{
+  position:relative;
+  z-index: 2;
+  margin-top: 2rem;
+  color: rgb(255, 255, 255) !important;
+  font-weight: 700 !important;
+}
+
+.ani-btn::after, .ani-btn::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-image: conic-gradient(from var(--angle),rgb(19, 19, 19),rgb(43, 43, 43),rgb(44, 44, 44),rgb(19, 19, 19));
+  z-index: -1;
+  border-radius: 5px;
+  padding: 2px;
+  animation: 1s spin linear infinite;
+}
+.ani-btn::before{
+  filter: blur(1.5rem);
+  opacity: 0.3;
+}
+@keyframes spin{
+  to{
+      --angle: 360deg;
+  }
+}
+
+.ani-card{
+  position:relative;
+  z-index: 2;
+  margin-top: 2rem;
+  
+}
+
+.ani-card::after, .ani-card::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  background-image: conic-gradient(from var(--angle),transparent 70%, green,white,orange);
+  padding: 1px;
+  z-index: -1;
+  border-radius: 5px;
+  animation: 3s spin linear infinite;
+}
+.ani-card::before{
+  filter: blur(1.5rem);
+  opacity: 0.3;
+}
+@keyframes spin{
+  to{
+      --angle: 360deg;
+  }
+}
