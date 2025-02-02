@@ -104,7 +104,7 @@ body h2{
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  background-image: conic-gradient(from var(--angle),transparent 70%, green,white,orange);
+  background-image: conic-gradient(from var(--angle),transparent 70%, white,white,grey,black);
   padding: 1px;
   z-index: -1;
   border-radius: 5px;
